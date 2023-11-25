@@ -46,26 +46,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libdisplayconfig.qti",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libdisplayconfig.qti.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libdisplayconfig.qti.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "vendor.qti.hardware.AGMIPC@1.0-impl",
 	owner: "xiaomi",
 	strip: {
@@ -108,17 +88,6 @@ android_app_import {
 }
 
 android_app_import {
-	name: "BluetoothDsDaService",
-	owner: "xiaomi",
-	apk: "proprietary/system_ext/app/BluetoothDsDaService/BluetoothDsDaService.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	system_ext_specific: true,
-}
-
-android_app_import {
 	name: "ImsRcsService",
 	owner: "xiaomi",
 	apk: "proprietary/system_ext/app/ImsRcsService/ImsRcsService.apk",
@@ -153,7 +122,7 @@ android_app_import {
 
 android_app_import {
 	name: "QtiTelephonyService",
-	owner: "qti",
+	owner: "xiaomi",
 	apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
 	certificate: "platform",
 	dex_preopt: {
@@ -244,10 +213,35 @@ android_app_import {
 	system_ext_specific: true,
 }
 
-dex_import {
-	name: "android.hardware.biometrics.fingerprint-V2.3-java",
+android_app_import {
+	name: "HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND",
 	owner: "xiaomi",
-	jars: ["proprietary/system/framework/android.hardware.biometrics.fingerprint-V2.3-java.jar"],
+	apk: "proprietary/product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	product_specific: true,
+}
+
+android_app_import {
+	name: "HotwordEnrollmentXGoogleHEXAGON_WIDEBAND",
+	owner: "xiaomi",
+	apk: "proprietary/product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	product_specific: true,
+}
+
+dex_import {
+	name: "com.android.hotwordenrollment.common.util",
+	owner: "xiaomi",
+	jars: ["proprietary/system_ext/framework/com.android.hotwordenrollment.common.util.jar"],
+	system_ext_specific: true,
 }
 
 dex_import {
@@ -300,13 +294,6 @@ dex_import {
 	owner: "xiaomi",
 	jars: ["proprietary/product/framework/uimservicelibrary.jar"],
 	product_specific: true,
-}
-
-dex_import {
-	name: "audiosphere",
-	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/audiosphere.jar"],
-	system_ext_specific: true,
 }
 
 dex_import {
@@ -404,13 +391,6 @@ dex_import {
 	name: "vendor.qti.ims.rcsuce-V1.2-java",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar"],
-	system_ext_specific: true,
-}
-
-dex_import {
-	name: "vendor.qti.voiceprint-V1.0-java",
-	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/vendor.qti.voiceprint-V1.0-java.jar"],
 	system_ext_specific: true,
 }
 
