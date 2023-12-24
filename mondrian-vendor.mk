@@ -116,6 +116,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libagm \
     libar-pal \
+    libdisplayconfig.qti \
     vendor.qti.hardware.AGMIPC@1.0-impl \
     PowerOffAlarm \
     uimgbaservice \
