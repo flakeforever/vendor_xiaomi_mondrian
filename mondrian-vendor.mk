@@ -6,6 +6,14 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/mondrian
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/mondrian/proprietary/odm/etc/camera/camerabooster.json:$(TARGET_COPY_OUT_ODM)/etc/camera/camerabooster.json \
+    vendor/xiaomi/mondrian/proprietary/system_ext/etc/camera/camerabooster.json:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/camera/camerabooster.json \
+    vendor/xiaomi/mondrian/proprietary/odm/etc/camera/ocr_aio:$(TARGET_COPY_OUT_ODM)/etc/camera/ocr_aio \
+    vendor/xiaomi/mondrian/proprietary/system_ext/etc/camera/ocr_aio:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/camera/ocr_aio \
+    vendor/xiaomi/mondrian/proprietary/odm/etc/cit_param_config.json:$(TARGET_COPY_OUT_ODM)/etc/cit_param_config.json \
+    vendor/xiaomi/mondrian/proprietary/odm/etc/device_info_qr_config.yml:$(TARGET_COPY_OUT_ODM)/etc/device_info_qr_config.yml \
+    vendor/xiaomi/mondrian/proprietary/odm/lib64/libmiocr.so:$(TARGET_COPY_OUT_ODM)/lib64/libmiocr.so \
+    vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libmiocr.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libmiocr.so \
     vendor/xiaomi/mondrian/proprietary/product/etc/permissions/UimGba.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimGba.xml \
     vendor/xiaomi/mondrian/proprietary/product/etc/permissions/UimGbaManager.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimGbaManager.xml \
     vendor/xiaomi/mondrian/proprietary/product/etc/permissions/UimService.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimService.xml \
@@ -44,6 +52,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/com.qualcomm.qti.wifidisplayhal@1.0.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/libmmrtpdecoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libmmrtpdecoder.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/libmmrtpencoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libmmrtpencoder.so \
+    vendor/xiaomi/mondrian/proprietary/system_ext/lib/libvppvideobox.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libvppvideobox.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/libwfdavenhancements.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libwfdavenhancements.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/libwfdclient.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libwfdclient.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib/libwfdcommonutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib/libwfdcommonutils.so \
@@ -79,6 +88,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libmmrtpencoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libmmrtpencoder.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libsd_sdk_display.qti.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libsd_sdk_display.qti.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libsdm-disp-apis.qti.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libsdm-disp-apis.qti.so \
+    vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libvppvideobox.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libvppvideobox.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libwfdavenhancements.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libwfdavenhancements.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libwfdclient.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libwfdclient.so \
     vendor/xiaomi/mondrian/proprietary/system_ext/lib64/libwfdcommonutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libwfdcommonutils.so \
@@ -109,10 +119,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.AGMIPC@1.0-impl \
     PowerOffAlarm \
     uimgbaservice \
+    HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND \
+    HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
     ImsRcsService \
     PerformanceMode \
     PowerSaveMode \
-    QtiTelephony \
     QtiTelephonyService \
     colorservice \
     workloadclassifier \
@@ -120,7 +131,6 @@ PRODUCT_PACKAGES += \
     WfdService \
     daxService \
     dpmserviceapp \
-    ims \
     qcrilmsgtunnel \
     QPerformance \
     QXPerformance \
@@ -130,10 +140,10 @@ PRODUCT_PACKAGES += \
     uimgbalibrary \
     uimgbamanagerlibrary \
     uimservicelibrary \
+    com.android.hotwordenrollment.common.util \
     com.qti.dpmframework \
     dpmapi \
     qcrilhook \
-    qti-telephony-common \
     vendor.qti.hardware.alarm-V1.0-java \
     vendor.qti.ims.connection-V1.0-java \
     vendor.qti.ims.factory-V2.0-java \
@@ -144,7 +154,4 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.rcssip-V1.2-java \
     vendor.qti.ims.rcsuce-V1.0-java \
     vendor.qti.ims.rcsuce-V1.1-java \
-    vendor.qti.ims.rcsuce-V1.2-java \
-    HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND \
-    HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
-    com.android.hotwordenrollment.common.util
+    vendor.qti.ims.rcsuce-V1.2-java
